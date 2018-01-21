@@ -1,5 +1,5 @@
 
-var hangman = require("./hangman.js");
+//var hangman = require("./hangman.js");
 
 var word = require("./word.js");
 

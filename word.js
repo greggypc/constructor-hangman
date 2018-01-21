@@ -9,6 +9,13 @@ function Word (randomPokemon) {
 	}
 console.log("from word.js " + randomPokemon);
 
+Word.prototype.splitWord = function() {
+	gameLetters = randomPokemon.split("");
+    var gameBlanks = gameLetters.map(i => ' _ ');
+    console.log(gameBlanks.join(" "));
+	};
+
+
 module.exports = Word;
 
 // Now create a method for the constructor that would print all of the information contained within an object to the console. 
