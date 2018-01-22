@@ -12,7 +12,7 @@ function Letter (letter) {
 //print function inside the object
 Letter.prototype.checkForLetter = function() {
 	console.log("checking if letter is in the word");
-		console.log("\n===================\n");
+	console.log("\n===================\n");
 	};
 
 module.exports = Letter;
