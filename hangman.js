@@ -1,14 +1,20 @@
 var inquirer = require("inquirer");
 
-var letter = require("./letter.js");
+//var letter = require("./letter.js");
 
-
+var randomPokemon = require('./pokemon.js');
 
 // variable we will use to count how many times our questions have been asked
 var remainingGuesses = 10;
+var junkArray = [];
 
 var getAnotherLetter = function() {
-  // if statement to ensure that our questions are only asked five times
+  var nextWord = new Word(randomPokemon);
+
+      // checkForLetter method is run to see if letter is in the word
+      nextWord.splitWord();
+
+  // if statement - when guesses run out - you lose.
   if (remainingGuesses > 0) {
     
     inquirer.prompt([
@@ -35,10 +41,11 @@ var getAnotherLetter = function() {
   }
 };
 
+//======================================LETTER==================================================
 // call getAnotherLetter for initial run
 getAnotherLetter();
 
-var word = require("./word.js");
+//var word = require("./word.js");
 
 function Letter (letter) {
 	this.letter = letter;
@@ -51,3 +58,25 @@ Letter.prototype.checkForLetter = function() {
 	console.log("checking if letter is in the word");
 	console.log("\n===================\n");
 	};
+
+	//module.exports = Letter;
+
+//======================================WORD==================================================
+
+	//var randomPokemon = require('./pokemon.js');
+ 
+function Word (randomPokemon) {
+	this.pokemon = randomPokemon;
+
+	}
+console.log("from word.js " + randomPokemon);
+
+Word.prototype.splitWord = function() {
+	var gameLetters = randomPokemon.split("");
+    var gameBlanks = gameLetters.map(i => ' _ ');
+    console.log(gameBlanks.join(" "));
+	};
+
+	//module.exports = Word;
+
+//======================================================================================
