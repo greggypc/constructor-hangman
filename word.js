@@ -19,16 +19,16 @@ Word.prototype.isComplete = function() {
 };
 
 Word.prototype.findLetter = function(letter) {
-	var lowerLetter = letter.toLowerCase();
-	if (this.guessesMade.indexOf(lowerLetter) != -1) {
-		return "Already selected!";
+	var upperLetter = letter.toUpperCase();
+	if (this.guessesMade.indexOf(upperLetter) != -1) {
+		console.log("Already selected!");
 	}
-	this.guessesMade += lowerLetter;
+	this.guessesMade += upperLetter;
 	for (var i = 0; i < this.letters.length; i++) {
-		if (this.letters[i].ltr.toLowerCase() === lowerLetter) {
+		if (this.letters[i].ltr.toUpperCase() === upperLetter) {
 		this.letters[i].show = true;
-		}	
-	}	
+		}
+	}
 };
 
 Word.prototype.toString = function() {

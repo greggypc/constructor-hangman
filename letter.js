@@ -10,6 +10,7 @@ function Letter(ltr) {
 	}
 };
 
+//log a '_' for every letter
 Letter.prototype.printInfo = function() {
 	if (this.show) {
 		return this.ltr;
