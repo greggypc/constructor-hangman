@@ -27,8 +27,8 @@ var startGame = function() {
       name: "userGuess"
       }
     ]).then(function(response) {
-    	var letter = letterInput.letter;
-    	myWord.findletter(letter);
+    	var letter = response.userGuess;
+    	myWord.findLetter(letter);
     		if (myWord.isComplete()) {
     			console.log("Winner!");
     			return; 
@@ -36,7 +36,7 @@ var startGame = function() {
     	console.log("==================\n"); //take next guess
     	console.log("You have " + (remainingGuesses - myWord.guessesMade.length) + " guesses left");
     	startGame(); //recursive
-    }
+    });
 };
 
 startGame(); //start

@@ -1,4 +1,6 @@
-// Determine if letter will appear as '_' or as a letter
+//Each letter object should either display an underlying character, 
+//or a blank placeholder (such as an underscore), 
+//depending on whether or not the user has guessed the letter
 
 function Letter(ltr) {
 	this.ltr = ltr;
@@ -8,7 +10,7 @@ function Letter(ltr) {
 	}
 };
 
-letter.prototype.printInfo = function() {
+Letter.prototype.printInfo = function() {
 	if (this.show) {
 		return this.ltr;
 	}
