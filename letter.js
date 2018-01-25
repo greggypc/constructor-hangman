@@ -1,18 +1,18 @@
+// Determine if letter will appear as '_' or as a letter
 
-//var hangman = require("./hangman.js");
-
-var word = require("./word.js");
-
-function Letter (letter) {
-	this.letter = letter;
+function Letter(ltr) {
+	this.ltr = ltr;
+	this.show = false;
+	if (this.ltr === ' '){
+		this.show = true;
 	}
+};
 
-// Now create a method for the constructor that would print all of the information contained within an object to the console. 
-// More memory efficient than putting
-//print function inside the object
-Letter.prototype.checkForLetter = function() {
-	console.log("checking if letter is in the word");
-	console.log("\n===================\n");
-	};
+letter.prototype.printInfo = function() {
+	if (this.show) {
+		return this.ltr;
+	}
+	return "_ ";
+};
 
 module.exports = Letter;
