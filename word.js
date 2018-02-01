@@ -27,7 +27,7 @@ Word.prototype.findLetter = function(letter) {
 	for (var i = 0; i < this.letters.length; i++) {
 		if (this.letters[i].ltr.toUpperCase() === upperLetter) {
 		this.letters[i].show = true;
-		}
+		} //else
 	}
 };
 
